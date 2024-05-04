@@ -8,22 +8,32 @@ asgiref==3.8.1
     # via django
 camelot-py[cv]==0.9.0
     # via pdfwordify
+certifi==2024.2.2
+    # via requests
 cffi==1.16.0
     # via cryptography
 chardet==5.2.0
     # via camelot-py
 charset-normalizer==3.3.2
-    # via pdfminer-six
+    # via
+    #   pdfminer-six
+    #   requests
 click==8.1.7
     # via camelot-py
 cryptography==42.0.5
     # via pdfminer-six
 django==5.0.4
-    # via -r requirements.in
+    # via
+    #   -r requirements.in
+    #   djangorestframework
 django-environ==0.11.2
+    # via -r requirements.in
+djangorestframework==3.15.1
     # via -r requirements.in
 et-xmlfile==1.1.0
     # via openpyxl
+idna==3.7
+    # via requests
 lxml==5.2.1
     # via python-docx
 multipledispatch==1.0.0
@@ -69,6 +79,8 @@ python-docx==1.1.0
     # via pdfwordify
 pytz==2024.1
     # via pandas
+requests==2.31.0
+    # via -r requirements.in
 six==1.16.0
     # via python-dateutil
 sqlparse==0.5.0
@@ -77,3 +89,5 @@ typing-extensions==4.11.0
     # via python-docx
 tzdata==2024.1
     # via pandas
+urllib3==2.2.1
+    # via requests
