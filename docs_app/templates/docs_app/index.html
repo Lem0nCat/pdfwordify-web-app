@@ -18,35 +18,40 @@
   <header role="banner">
     <nav class="navbar navbar-expand-lg navbar-dark p-3 bg-danger" id="headerNav">
       <div class="container-fluid">
-        <!-- <a class="navbar-brand d-block d-lg-none" href="#">
-                <img src="/static_files/images/logos/logo_2_white.png" height="80" />
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button> -->
+        <a class="navbar-brand d-block d-lg-none" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+            class="bi bi-file-earmark-break-fill" viewBox="0 0 16 16">
+            <path
+              d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V9H2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2zM2 12h12v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zM.5 10a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1z" />
+          </svg>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav mx-auto ">
             <li class="nav-item">
-              <a class="nav-link mx-2 active" aria-current="page" href="#">Home</a>
+              <a class="nav-link mx-2 my-1 active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mx-2" href="#">Products</a>
+              <a class="nav-link mx-2 my-1" href="#">Products</a>
             </li>
             <li class="nav-item d-none d-lg-block">
               <a class="nav-link mx-2" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                  class="bi bi-filetype-pdf" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5zM1.6 11.85H0v3.999h.791v-1.342h.803q.43 0 .732-.173.305-.175.463-.474a1.4 1.4 0 0 0 .161-.677q0-.375-.158-.677a1.2 1.2 0 0 0-.46-.477q-.3-.18-.732-.179m.545 1.333a.8.8 0 0 1-.085.38.57.57 0 0 1-.238.241.8.8 0 0 1-.375.082H.788V12.48h.66q.327 0 .512.181.185.183.185.522m1.217-1.333v3.999h1.46q.602 0 .998-.237a1.45 1.45 0 0 0 .595-.689q.196-.45.196-1.084 0-.63-.196-1.075a1.43 1.43 0 0 0-.589-.68q-.396-.234-1.005-.234zm.791.645h.563q.371 0 .609.152a.9.9 0 0 1 .354.454q.118.302.118.753a2.3 2.3 0 0 1-.068.592 1.1 1.1 0 0 1-.196.422.8.8 0 0 1-.334.252 1.3 1.3 0 0 1-.483.082h-.563zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638z" />
+                  class="bi bi-file-earmark-break-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V9H2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2zM2 12h12v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zM.5 10a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1z" />
                 </svg>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mx-2" href="#">Pricing</a>
+              <a class="nav-link mx-2 my-1" href="#">Pricing</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              <a class="nav-link mx-2 my-1 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">
                 Company
               </a>
@@ -94,14 +99,16 @@
             {% csrf_token %}
             <div class="mb-3">
               <div class="drag-area border rounded p-4 text-center">
+                <i id="dynamicIcon" class="bi bi-file-earmark-pdf-fill" style="font-size: 60px;"></i>
                 <p class="mb-2">Drag the PDF file here or click to select a file</p>
                 <!-- {{ form.file }} -->
                 <input id="pdfFile" name="pdfFile" type="file" class="form-control-file d-none">
               </div>
             </div>
             <div class="d-grid gap-2 col-6 mx-auto">
-              <button type="submit" class="btn btn-danger" id="submitBtn" >
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;" id="spinner"></span>
+              <button type="submit" class="btn btn-danger" id="submitBtn">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"
+                  id="spinner"></span>
                 Convert to DOCX
               </button>
             </div>
@@ -151,6 +158,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="{% static 'docs_app/js/drag_and_drop.js' %}"></script>
-  <script src="{% static 'docs_app/js/form_sending.js' %}"></script> 
+  <script src="{% static 'docs_app/js/form_sending.js' %}"></script>
 </body>
+
 </html>
