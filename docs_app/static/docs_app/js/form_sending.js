@@ -7,6 +7,9 @@ $(document).on('submit', '#fileUploadForm', function(e){
         formData.append('file', $("#pdfFile")[0].files[0]);
         formData.append('csrfmiddlewaretoken', $('input[name=csrfmiddlewaretoken]').val())
 
+        // Add table extraction mode to formData
+        formData.append('extraction_method', $('#extraction_method').val());
+
         // Show the spinner and disable the button
         var button = $('#submitBtn');
         var spinner = $('#spinner');
@@ -28,7 +31,8 @@ $(document).on('submit', '#fileUploadForm', function(e){
                 spinner.hide();
                 button.prop('disabled', false);
 
-                window.location.href = data.url
+                var fileUrl = data.url
+                window.location.href = '/result/?file_url=' + encodeURIComponent(fileUrl);
             },
             error: function(error) {
                 console.log('Error:', error);

@@ -18,7 +18,8 @@
   <header role="banner">
     <nav class="navbar navbar-expand-lg navbar-dark p-3 bg-danger" id="headerNav">
       <div class="container-fluid">
-        <a class="navbar-brand d-block d-lg-none" href="#">
+        <!-- Mobile elements -->
+        <a class="navbar-brand d-block d-lg-none" href="/">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
             class="bi bi-file-earmark-break-fill" viewBox="0 0 16 16">
             <path
@@ -30,16 +31,17 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Desktop elements -->
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav mx-auto ">
             <li class="nav-item">
-              <a class="nav-link mx-2 my-1 active" aria-current="page" href="#">Home</a>
+              <a class="nav-link mx-2 my-1 active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link mx-2 my-1" href="#">Products</a>
             </li>
             <li class="nav-item d-none d-lg-block">
-              <a class="nav-link mx-2" href="#">
+              <a class="nav-link mx-2" href="/">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                   class="bi bi-file-earmark-break-fill" viewBox="0 0 16 16">
                   <path
@@ -101,10 +103,20 @@
               <div class="drag-area border rounded p-4 text-center">
                 <i id="dynamicIcon" class="bi bi-file-earmark-pdf-fill" style="font-size: 60px;"></i>
                 <p class="mb-2">Drag the PDF file here or click to select a file</p>
-                <!-- {{ form.file }} -->
                 <input id="pdfFile" name="pdfFile" type="file" class="form-control-file d-none">
               </div>
             </div>
+
+            <!-- Dropdown Menu for Table Extraction Mode -->
+            <div class="mb-3">
+              <label for="tableExtractionMode" class="form-label">Select the table extraction mode:</label>
+              <select class="form-select" id="extraction_method" name="extraction_method">
+                <option value="lattice">Lattice</option>
+                <option value="stream">Stream</option>
+                <option value="">No tables</option>
+              </select>
+            </div>
+
             <div class="d-grid gap-2 col-6 mx-auto">
               <button type="submit" class="btn btn-danger" id="submitBtn">
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"

@@ -18,7 +18,9 @@ class PDFToDocxAPIView(APIView):
             file_instance = file_serializer.save()  # Save uploaded file
             pdf_path = file_instance.file.path
             
-            docx_path = convert_to_docx(pdf_path)
+            method = file_serializer.validated_data.get('extraction_method')
+            
+            docx_path = convert_to_docx(pdf_path, method=method)
             
             # Return converted DOCX file as a download
             docx_url = settings.MEDIA_URL + 'files/' + os.path.basename(docx_path)
